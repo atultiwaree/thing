@@ -1,8 +1,15 @@
 #!/usr/bin/env node
-
-import chalk from "chalk";
-
+import clipboard from "clipboardy";
 const args = process.argv.slice(2);
 
-console.log("Thing working ✅");
-console.log("Args:", args);
+const main = async (args) => {
+  if (args[0] === "-c") {
+    const text = await clipboard.read();
+
+    return text;
+  }
+};
+
+const data = await main(args);
+
+console.log(data);
