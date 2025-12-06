@@ -1,0 +1,30 @@
+{
+  "name": "thing",
+  "version": "1.0.0",
+  "description": "\"A developer-friendly, terminal-first clipboard: store snippets, filenames, or route names under custom keys and retrieve them remotely with a single command\"",
+  "keywords": [
+    "clipboard"
+  ],
+  "homepage": "https://github.com/atultiwaree/thing#readme",
+  "bugs": {
+    "url": "https://github.com/atultiwaree/thing/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atultiwaree/thing.git"
+  },
+  "license": "MIT",
+  "author": "Atul Tiwaree",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2"
+  },
+  "bin": {
+    "thing": "./index.js"
+  }
+}
