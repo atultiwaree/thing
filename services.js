@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import chalk from "chalk";
 export async function writeText(data, param) {
   try {
     let config = {
@@ -14,17 +14,34 @@ export async function writeText(data, param) {
 
     let response = await axios(config);
 
-    if (response?.data?.status === 200) {
-      return "[x] Clipped";
+    if (response?.data?.status === 201) {
+      let responseToUser =
+        chalk.green("[✓] Clipped") +
+        chalk.gray(" - Use ") +
+        chalk.yellow("thing get <clip-id>") +
+        chalk.gray(" to retrieve");
+
+      return responseToUser;
     }
 
     if (response?.data?.status === 409) {
-      return response?.data?.message;
+      const keyName = response?.data?.data?.param;
+
+      let responseToUser =
+        chalk.red("[✗]") +
+        ` Key "${chalk.yellow(
+          keyName
+        )}" is already in use. Try a different name.`;
+
+      return responseToUser;
     }
 
     return response?.data;
   } catch (e) {
-    console.log("successMessages.API_MSG");
+    console.log(e);
+    if (!e.response) {
+      return "[✗] No internet connection or server unreachable";
+    }
   }
 }
 

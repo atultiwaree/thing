@@ -13,9 +13,8 @@ const main = async (args) => {
     return chalk.yellow("[→] URL identifier not found");
   }
 
-  if (args[0] === "-c") {
+  if (args[0] === "copy") {
     const text = await clipboard.read();
-    console.log("x");
 
     if (!text) {
       return chalk.yellow("[→] No clipboard content found!");
@@ -37,7 +36,10 @@ const main = async (args) => {
 
       await clipboard.write(String(response.data));
 
-      return "[✓] Data copied to your clipboard!";
+      return (
+        chalk.green("[✓] Copied!") +
+        chalk.gray(" Press Ctrl+V to paste anywhere.")
+      );
     } catch (err) {
       console.error("Failed to copy data:", err.message);
     }
