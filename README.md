@@ -1,7 +1,7 @@
 # Ring 
 
 <p align="center">
-  <img src="./assets/banner.png" alt="Ring CLI" width="600"/>
+  <img src="https://raw.githubusercontent.com/atultiwaree/ring/main/assets/banner.png" alt="Ring CLI" width="600"/>
 </p>
 
 <p align="center">
