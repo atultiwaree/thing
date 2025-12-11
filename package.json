@@ -1,6 +1,6 @@
 {
   "name": "@atultiwaree/ring",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "description": "A developer-friendly, terminal-first clipboard: store snippets, filenames, or route names under custom keys and retrieve them remotely with a single command",
   "keywords": [
     "clipboard",

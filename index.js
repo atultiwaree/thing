@@ -33,7 +33,12 @@ const main = async (args) => {
         return chalk.yellow("[→] No content found for this key");
       }
 
-      await clipboard.write(String(response.data));
+      const value =
+        typeof response.data === "string"
+          ? response.data
+          : JSON.stringify(response.data, null, 2);
+
+      await clipboard.write(value);
 
       return (
         chalk.green("[✓] Copied to clipboard!") +
