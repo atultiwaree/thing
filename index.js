@@ -6,11 +6,11 @@ import { getClip, writeText } from "./services.js";
 
 const main = async (args) => {
   if (!args[0]) {
-    return chalk.yellow("[→] No parameter given");
+    return chalk.yellow("[→] Usage: ring <copy|get> <key>");
   }
 
   if (!args[1]) {
-    return chalk.yellow("[→] URL identifier not found");
+    return chalk.yellow("[→] Key identifier required");
   }
 
   if (args[0] === "copy") {
@@ -30,20 +30,21 @@ const main = async (args) => {
       const response = await getClip(args[1]);
 
       if (!response?.data) {
-        console.log("No content available");
-        return;
+        return chalk.yellow("[→] No content found for this key");
       }
 
       await clipboard.write(String(response.data));
 
       return (
-        chalk.green("[✓] Copied!") +
-        chalk.gray(" Press Ctrl+V to paste anywhere.")
+        chalk.green("[✓] Copied to clipboard!") +
+        chalk.gray(" Press Ctrl+V to paste.")
       );
     } catch (err) {
-      console.error("Failed to copy data:", err.message);
+      return chalk.red(`[✗] Error: ${err.message}`);
     }
   }
+
+  return chalk.yellow("[→] Unknown command. Use 'copy' or 'get'");
 };
 
 const data = await main(args);

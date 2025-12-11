@@ -1,17 +1,41 @@
 {
-  "name": "thing",
-  "version": "1.0.0",
-  "description": "\"A developer-friendly, terminal-first clipboard: store snippets, filenames, or route names under custom keys and retrieve them remotely with a single command\"",
+  "name": "@atultiwaree/ring",
+  "version": "1.1.0",
+  "description": "A developer-friendly, terminal-first clipboard: store snippets, filenames, or route names under custom keys and retrieve them remotely with a single command",
   "keywords": [
-    "clipboard"
+    "clipboard",
+    "cli",
+    "terminal",
+    "snippets",
+    "developer-tools",
+    "remote-clipboard",
+    "cloud-clipboard",
+    "sync-clipboard",
+    "clipboard-manager",
+    "clipboard-sync",
+    "code-snippets",
+    "snippet-manager",
+    "copy-paste",
+    "clipboard-history",
+    "cross-platform",
+    "universal-clipboard",
+    "clipboard-sharing",
+    "developer-clipboard",
+    "terminal-clipboard",
+    "cli-tool",
+    "productivity",
+    "devtools",
+    "copy",
+    "paste",
+    "store"
   ],
-  "homepage": "https://github.com/atultiwaree/thing#readme",
+  "homepage": "https://github.com/atultiwaree/ring#readme",
   "bugs": {
-    "url": "https://github.com/atultiwaree/thing/issues"
+    "url": "https://github.com/atultiwaree/ring/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atultiwaree/thing.git"
+    "url": "git+https://github.com/atultiwaree/ring.git"
   },
   "license": "MIT",
   "author": "Atul Tiwaree",
@@ -27,6 +51,6 @@
     "clipboardy": "^5.0.1"
   },
   "bin": {
-    "thing": "./index.js"
+    "ring": "./index.js"
   }
 }
